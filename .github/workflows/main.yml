@@ -1,0 +1,35 @@
+name: Robot Framework Testes Web
+on: push
+jobs:
+  test:
+    name: Run Testes
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout Repository 
+      uses: actions/checkout@v2
+
+    - name: Set up Python 
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run:  |
+        pip install robotframework
+        pip install robotframework-requests
+        pip install robotframework-faker
+        python3 -m pip install robotframework-seleniumlibrary
+        python -m pip install robotframework-seleniumlibrary
+        pip install --upgrade robotframework-seleniumlibrary
+        pip3 install --upgrade robotframework-seleniumlibrary
+
+    - name: Run Robot Frameworks testes
+      run:  |
+        robot -d formulario testes
+    - name: Arquive Robot Framework formulario
+      if: ${{always() }}
+      uses: actions/upload-artifact@v3
+      with:
+        name: Formulario-robot
+        path: ./formulario
