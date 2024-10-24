@@ -19,7 +19,7 @@ ${EstadoEmpresa}  RS
 
 CT-01 - Cadastrar Empresa com sucesso
     Acessar pagina de login
-	Digitar email valido
+    Digitar email valido
     Digitar senha valida
     Clicar no botao entrar
     Verificar se logou com sucesso
@@ -29,7 +29,7 @@ CT-01 - Cadastrar Empresa com sucesso
     Click Element    id=Cadastros
     Click Element    id=Empresa
     Capture Page Screenshot    screenshot/Empresa.png 
-    Click Element    id=Novo Cadastro
+    Click Element    css=button.css-fvzsut
     Capture Page Screenshot    screenshot/CadastroEmpresa.png 
    
 
