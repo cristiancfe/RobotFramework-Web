@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.0 on win32)" generated="2024-10-24T19:23:32.720422" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\sandr\Downloads\cristian\QACoders\Academy\Robot-API\Web\testes\login.robot">
+<test id="s1-t1" name="CT-01 - Login de usuario administrador com sucesso" line="8">
+<kw name="Abrir navegador" owner="login_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:32.934842" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-24T19:23:32.933842" elapsed="1.736867"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-24T19:23:34.670709" elapsed="0.124994"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:32.933842" elapsed="1.862860"/>
+</kw>
+<kw name="Acessar pagina de login" owner="login_resource">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:34.800222" level="INFO">Opening url 'https://automacao.qacoders.dev.br/login'</msg>
+<arg>url=${url_base}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-24T19:23:34.800222" elapsed="1.498507"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:36.924367" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/login.png"&gt;&lt;img src="screenshot/login.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshot/login.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-24T19:23:36.299725" elapsed="0.624642"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:34.799284" elapsed="2.125083"/>
+</kw>
+<kw name="Digitar email valido" owner="login_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${email_input}</arg>
+<arg>timeout=7</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-24T19:23:36.925363" elapsed="0.026581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:36.952946" level="INFO">Typing text 'sysadmin@qacoders.com' into text field 'id=email'.</msg>
+<arg>locator=${email_input}</arg>
+<arg>text=${email_valido}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T19:23:36.951944" elapsed="0.182915"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:36.925363" elapsed="0.210491"/>
+</kw>
+<kw name="Digitar senha valida" owner="login_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${email_input}</arg>
+<arg>timeout=7</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.136851" elapsed="0.017110"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:37.154957" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2024-10-24T19:23:37.190327" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>locator=${senha_input}</arg>
+<arg>password=${senha_valida}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.154957" elapsed="0.098241"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:37.254195" level="INFO">Typing text '1234@Test' into text field 'id=password'.</msg>
+<arg>locator=${senha_input}</arg>
+<arg>text=${senha_valida}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.254195" elapsed="0.105262"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-24T19:23:37.360452" level="INFO">1234@Test</msg>
+<arg>${senha_valida}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.359457" elapsed="0.000995"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:37.135854" elapsed="0.224598"/>
+</kw>
+<kw name="Clicar no botao entrar" owner="login_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${botao_input}</arg>
+<arg>timeout=7</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.361449" elapsed="0.020284"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:37.382731" level="INFO">Clicking button 'id=login'.</msg>
+<arg>locator=${botao_input}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.381733" elapsed="0.071477"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:38.345887" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/login_preenchido.png"&gt;&lt;img src="screenshot/login_preenchido.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshot/login_preenchido.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-24T19:23:37.454263" elapsed="0.891624"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:37.361449" elapsed="0.984438"/>
+</kw>
+<kw name="Verificar se logou com sucesso" owner="login_resource">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>text=Logout</arg>
+<arg>timeout=7</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-24T19:23:38.346883" elapsed="0.013146"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:38.364015" level="INFO">${current_url} = https://automacao.qacoders.dev.br/home</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-10-24T19:23:38.360029" elapsed="0.004984"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>${url_home}</arg>
+<arg>A URL atual não é a esperada!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-10-24T19:23:38.365013" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-10-24T19:23:38.484646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/logado.png"&gt;&lt;img src="screenshot/logado.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>screenshot/logado.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-10-24T19:23:38.365013" elapsed="0.120868"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:38.346883" elapsed="0.138998"/>
+</kw>
+<kw name="Fechar navegador" owner="login_resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-24T19:23:38.486881" elapsed="2.500606"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:38.485881" elapsed="2.502305"/>
+</kw>
+<status status="PASS" start="2024-10-24T19:23:32.932860" elapsed="8.055326"/>
+</test>
+<status status="PASS" start="2024-10-24T19:23:32.721418" elapsed="8.267769"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
