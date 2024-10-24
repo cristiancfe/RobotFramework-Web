@@ -17,8 +17,8 @@ jobs:
     - name: Install dependencies
       run:  |
         pip install robotframework
-        pip install robotframework-requests
         pip install robotframework-faker
+        pip install --upgrade robotframework-seleniumlibrary
         python3 -m pip install robotframework
         python -m pip install robotframework
         pip install --upgrade robotframework
