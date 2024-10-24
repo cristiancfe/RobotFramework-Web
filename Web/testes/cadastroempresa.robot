@@ -2,7 +2,7 @@
 Library                FakerLibrary    locale=pt_BR
 Library                SeleniumLibrary
 Library                random
-Resource               ./Web/resource/login_resource.robot
+Resource               ../resource/login_resource.robot
 
 Test Setup             Abrir navegador
 
