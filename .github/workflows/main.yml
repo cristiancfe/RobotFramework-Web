@@ -27,7 +27,7 @@ jobs:
         
     - name: Run Robot Frameworks testes
       run:  |
-        robot -d  formulario Web/testes
+        robot -d formulario Web/testes
     - name: Arquive Robot Framework results 
       if: ${{always() }}
       uses: actions/upload-artifact@v3
