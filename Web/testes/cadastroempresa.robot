@@ -29,6 +29,7 @@ CT-01 - Cadastrar Empresa com sucesso
     Click Element    id=Cadastros
     Click Element    id=Empresa
     Capture Page Screenshot    screenshot/Empresa.png 
+    Wait Until Element Is Visible    css=button.css-fvzsut
     Click Element    css=button.css-fvzsut
     Capture Page Screenshot    screenshot/CadastroEmpresa.png 
    
