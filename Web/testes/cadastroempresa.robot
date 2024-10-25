@@ -19,7 +19,7 @@ ${EstadoEmpresa}  RS
 
 CT-01 - Cadastrar Empresa com sucesso
     Acessar pagina de login
-    Digitar email valido
+	Digitar email valido
     Digitar senha valida
     Clicar no botao entrar
     Verificar se logou com sucesso
@@ -96,6 +96,7 @@ CT-01 - Cadastrar Empresa com sucesso
     Input Text    id=number              ${numeroEmpresa}
     Capture Page Screenshot    screenshot/NumeroEmpresa.png
     
+    Wait Until Element Is Visible    id=complement
     Input Text    id=complement          ${Complemento}
     Capture Page Screenshot    screenshot/ComplementoEmpresa.png
     Capture Page Screenshot    screenshot/Formulario1.png
