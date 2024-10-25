@@ -1,5 +1,5 @@
 # RobotFramework-Web
-### Projeto de automação Web utilizando RobotFramework com Pipeline no GitHub Actions disponibilizando uma url do report do projeto gerado em html
+### Projeto de automação Web utilizando RobotFramework com Pipeline no GitHub Actions disponibilizando uma url do report do projeto gerado em html, com print como evidências.
 ## Relatório com screenshots
 ![image](https://github.com/user-attachments/assets/dc4166a2-cc39-4876-865a-33bd1afa55a7)
 
