@@ -1,9 +1,17 @@
-name: Robot Framework Formulario Web 
+name: Robot Framework Testes Web
 on: push
 jobs:
   test:
     name: Run Testes
     runs-on: ubuntu-latest
+
+    permissions:
+     contents: read
+     pages: write
+     id-token: write
+    environment:
+      name: github-pages
+      url: https://cristiancfe.github.io/RobotFramework-Web/report.html
 
     steps:
     - name: checkout Repository 
@@ -17,20 +25,31 @@ jobs:
     - name: Install dependencies
       run:  |
         pip install robotframework
+        pip install robotframework-requests
         pip install robotframework-faker
+        python3 -m pip install robotframework-seleniumlibrary
+        python -m pip install robotframework-seleniumlibrary
         pip install --upgrade robotframework-seleniumlibrary
-        python3 -m pip install robotframework
-        python -m pip install robotframework
-        pip install --upgrade robotframework
-        pip3 install --upgrade robotframework
-        pip install setuptools 
-        
+        pip3 install --upgrade robotframework-seleniumlibrary
+
     - name: Run Robot Frameworks testes
       run:  |
-        robot -d formulario Web/testes
-    - name: Arquive Robot Framework results 
+        robot -d formulario testes
+    - name: Arquive Robot Framework formulario
       if: ${{always() }}
       uses: actions/upload-artifact@v3
       with:
         name: Formulario-robot
         path: ./formulario
+    - name: Setup Pages
+      uses: actions/configure-pages@v2
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: formulario/
+
+    - name: Deploy to Github Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
+    
