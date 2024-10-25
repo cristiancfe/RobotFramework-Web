@@ -15,7 +15,7 @@ ${headless}       headlesschrome
 *** Keywords ***
 
 Abrir navegador
-    Open Browser    browser=${Browser}
+    Open Browser    browser=${headless}
 	Maximize Browser Window
 Fechar navegador
     Close Browser
