@@ -33,7 +33,7 @@ jobs:
         pip3 install --upgrade robotframework-seleniumlibrary
         pip install setuptools
 
-    - name: Run Robot Frameworks testes
+    - name: Testes Robot Web
       run:  |
         robot -d formulario Web/testes
     - name: Arquive Robot Framework formulario
