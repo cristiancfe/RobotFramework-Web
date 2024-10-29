@@ -2,7 +2,7 @@ name: Robot Framework Testes Web
 on: push
 jobs:
   test:
-    name: Run Testes
+    name: Testes Robot Web
     runs-on: ubuntu-latest
 
     permissions:
